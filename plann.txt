@@ -1,0 +1,145 @@
+strategic use-cases for iteration
+  logistical 
+    mostly data structures
+    iterating serves only to hit all items
+    same task is done to each item
+    work on one item does not carry over to the next
+    replicate map
+  accumulative
+    things come in and pile up
+    replicate reduce
+  fine-tuning (name?)
+    - the same thing being reworked
+      different from recursion, whole thing is reworked not parts?
+    some process being done to a thing till it's satisfying
+    can be thought of as building a solution
+    fixed vs unknown (for vs while)
+  destructurative
+    a thing comes in and is broken down
+
+differences from recursion
+  iterative problems will also be composed of repeated subtasks
+    but those subtasks must not look like the whole task
+  iterative problems can be thought of as blanketing an n-dimensional space
+    recursive will look more like branches
+  iterative problems will likely not include a reductive portion
+
+starters
+  reduce, map, filter, find
+  enhanced control 
+
+exercises
+  given snippet with one loop type
+    rewrite it in all others 
+      that apply, ie. in & of
+        making arrays and objects work in both
+      or should you force all to apply?
+    how well does each loop type fit this code?
+  refactor-out iterations
+    to encapsulate bodies or whole loop?
+    will help id strategy-type
+  enhanced control
+    break, continue, labels
+    how they work & how to use them
+    how to refactor them out using conditionals
+      break -> wrap the rest in a conditional & set the sentinel to quitting time
+      continue -> same, but don't set the sentinel to quitting time
+      labels -> ?. functions?
+  given problem
+    write test cases
+    answer questions
+    plan strategy
+    solve with all loops
+    refactor favorite one
+  one set of starters
+    replicate key js array methods
+    apply all steps above to those
+    https://flaviocopes.com/javascript-loops-map-filter-reduce-find/
+    https://www.digitalocean.com/community/tutorials/how-to-use-array-methods-in-javascript-iteration-methods
+  logging
+    building n-dimensional logs of n-dimensional spaces
+    strategy of course
+
+pieces or lo's
+  refactoring between loop types
+    use-case types
+  analyzing behavior
+    logging
+    counting
+    explaining
+  trusting iteration
+    extract body
+      for nesteds, does outer loop have anything but an inner loop?
+  refactoring for strategy
+    - whole loop or parts of body?
+    chunking
+    encapsulating
+  body-first dev
+    trusting
+    planning
+  refactoring to recursion
+    comes nicely from body-first development
+
+body-first development
+  - decided, this is happening
+  in a function with test cases
+    each case moves the problem one step further
+      ie. reduce:
+        {name: '', args: [[1,2,3], acc, cb, i], expected: [[1,2,3], acc, i++]}
+    return value would include result, next sentinels, eval'ed condition
+    tests test for sentinels, result(s), eval'ed condition (, break [label], continue[label])
+      need to differentiate between a break & continue
+        done naturally by testing sentinels & eval'ed conditions?
+          not when breaking from labeled nested loops, need to know which was broken
+  would require a strategic break-down of problem first
+    like recursion
+    but not quite, illustrating a difference
+  could help wrap head around things like break/continue
+  the block is labeled and in a function
+    the labeled block is the only thing in the function
+
+the questions
+  what is my starting state
+  what is my finished state
+  -- -- -- -- -- -- -- -- -
+  what do i need to repeat
+  what do i change each time
+  when do i stop repeating
+
+loops 
+  http://wiki.c2.com/?BuildLoopsYourself
+  http://wiki.c2.com/?UseBuiltInLoops
+  http://wiki.c2.com/?CategoryLoops
+  http://wiki.c2.com/?MakeLoopsApparent
+  http://wiki.c2.com/?FunctionsForLoops
+    refactoring
+  http://wiki.c2.com/?WhileNotDoneLoop
+
+related js things
+  iterables
+    http://javascript.info/iterable
+  break, continue, labels
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+
+not bad
+  https://www.khanacademy.org/computing/computer-programming/programming/looping/pt/intro-to-while-loops
+?'s
+  what do i want to repeat
+  what do i change each time
+  when do i stop repeating
+
+https://javascript.info/while-for
+https://www.learn-js.org/en/Loops
+https://shawnr.gitbooks.io/practical-introduction-to-javascript/content/controlling-logical-flow/66-extra-practice.html
+
+when to choose iteration over recursion
+  https://www.quora.com/Should-recursion-be-taught-before-iteration-in-Computer-Science
+
+https://www.guru99.com/loop-testing.html
+
+inferring strategies 
+  / loops
+  / nesting.js
+  / order of complexity
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
